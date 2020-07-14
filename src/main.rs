@@ -30,3 +30,5 @@ fn main() {
     let output = &format!("{:x}", digest_final);
     print!("{}", output);
 }
+
+
