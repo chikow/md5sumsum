@@ -14,8 +14,8 @@ fn main() {
             paths.push(String::from(entry.path().to_string_lossy()))
         }
     }
-    // since it compares basing on Unicode code points, we have to
-    // lowercase every name so we are fine 
+
+
     paths.sort_by(|a, b| a.to_lowercase().cmp(&b.to_lowercase()));
 
     let mut s = String::new();
@@ -24,7 +24,7 @@ fn main() {
         .map(|s| format!("{:x}", md5::compute(s)))
         .collect::<Vec<String>>()
         .join("");
-    //println!("{:?}", s);
+
     
     let digest_final = md5::compute(s);
     let output = &format!("{:x}", digest_final);
